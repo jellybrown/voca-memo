@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 18px;
+  color: #fff;
+  position: relative;
+}
+
+/* header */
+header {
+  padding: 1.5em 0;
+  position: fixed;
+  width: 100%;
+  background: #fff;
+  z-index: 2;
+}
+header h1 {
+  text-align: center;
+  color: #585858;
+}
+
+/* voca (ul,li) */
+.voca_section {
+  width: 100%;
+  background: #343434;
+  padding-top: 4em;
+  padding-bottom: 2em;
+  position: absolute;
+}
+
+.voca_list {
+  width: 100%;
+  padding: 4em 6em;
+}
+.voca_item {
+  padding: 2em 2em 1em 2em;
+  border-bottom: 1px solid #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.english {
+  font-size: 2.5rem;
+  flex-basis: 50%;
+}
+.korean {
+  font-size: 1.5rem;
+  flex: 1;
+}
+.trash_icon {
+  font-size: 1.8rem;
+  color: #f69a9a;
+  cursor: pointer;
+}
+
+/* button */
+.add_btn {
+  font-size: 1.2rem;
+  width: 3.5em;
+  height: 3.5em;
+  line-height: 3.5em;
+  text-align: center;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  background: #589bff;
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  cursor: pointer;
+}
