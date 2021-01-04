@@ -21,11 +21,15 @@ closeBtn.addEventListener("click", closeModal);
 
 let inputs = document.querySelectorAll("input");
 
-const addNewWord = () => {
+const generateWord = () => {
   const engValue = engInput.value;
   const koValue = koInput.value;
   const word = new Word(engValue, koValue);
   console.log(word);
+};
+
+const addNewWord = () => {
+  generateWord();
 };
 
 modalAddBtn.addEventListener("click", addNewWord);
