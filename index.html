@@ -10,8 +10,9 @@
     <script defer src="./main.js"></script>
 </head>
 <body>
-    <header><h1>나만의 영어단어장</h1></header>
+    
     <section class="voca_section">
+        <div class="voca_title"><h1>나만의 영어단어장</h1></div>
         <ul class="voca_list">
             <li class="voca_item">
                 <span class="letter english">Rice</span>
@@ -45,11 +46,21 @@
             </li>
         </ul>
        
-        <button class="add_btn"><i class="fas fa-plus"></i></button>
+        <button class="main_add_btn"><i class="fas fa-plus"></i></button>
         
     </section>
     <section class="modal">
-
+        <div class="top">
+            <h2>단어추가</h2>
+            <span><i class="fas fa-times"></i></span>
+        </div>
+        <div class="content">
+            <label for="eng_input">영어</label>
+            <input type="text" id="eng_input"/>
+            <label for="ko_input">뜻</label>
+            <input type="text" id="ko_input"/>
+        </div>
+        <button class="modal_add_btn">추가</button>
     </section>
    
 </body>
