@@ -19,17 +19,16 @@ const closeModal = () => {
 plusBtn.addEventListener("click", openModal);
 closeBtn.addEventListener("click", closeModal);
 
-let inputs = document.querySelectorAll("input");
-
+let word;
 const generateWord = () => {
   const engValue = engInput.value;
   const koValue = koInput.value;
-  const word = new Word(engValue, koValue);
-  console.log(word);
+  word = new Word(engValue, koValue);
 };
 
 const addNewWord = () => {
   generateWord();
+  console.log(word);
 };
 
 modalAddBtn.addEventListener("click", addNewWord);
