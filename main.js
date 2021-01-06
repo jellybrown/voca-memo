@@ -7,6 +7,7 @@ const content = document.querySelector(".content");
 const modalAddBtn = document.querySelector(".modal_add_btn");
 const engInput = document.querySelector("#eng_input");
 const koInput = document.querySelector("#ko_input");
+const vocaList = document.querySelector(".voca_list");
 
 const openModal = () => {
   modalSection.classList.remove("hide");
@@ -25,10 +26,13 @@ const generateWord = () => {
   const koValue = koInput.value;
   return new Word(engValue, koValue);
 };
+const makeData = (word) => {};
+const pushList = (data) => {};
 
 const addNewWord = () => {
   word = generateWord();
-  console.log(word);
+  data = makeData(word);
+  pushList(data);
 };
 
 modalAddBtn.addEventListener("click", addNewWord);
