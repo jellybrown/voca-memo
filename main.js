@@ -21,18 +21,36 @@ plusBtn.addEventListener("click", openModal);
 closeBtn.addEventListener("click", closeModal);
 
 let word;
+let data;
 const generateWord = () => {
   const engValue = engInput.value;
   const koValue = koInput.value;
   return new Word(engValue, koValue);
 };
-const makeData = (word) => {};
+const makeData = (word) => {
+  let newData = document.createElement("li");
+  newData.classList.add("voca_item");
+  let span = document.createElement("span");
+  span.classList.add("letter");
+  span.classList.add("english");
+  span.innerText = word._eng;
+  let span2 = document.createElement("span");
+  span2.classList.add("letter");
+  span2.classList.add("korean");
+  span2.innerText = word._ko;
+  newData.append(span);
+  newData.append(span2);
+  return newData;
+  // <a class="trash_icon">~ 도 추가하기
+  // 아마 함수로 묶어야할듯
+};
 const pushList = (data) => {};
 
 const addNewWord = () => {
   word = generateWord();
   data = makeData(word);
-  pushList(data);
+  console.log(data);
+  // pushList(data);
 };
 
 modalAddBtn.addEventListener("click", addNewWord);
