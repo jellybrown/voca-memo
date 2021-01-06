@@ -23,11 +23,11 @@ let word;
 const generateWord = () => {
   const engValue = engInput.value;
   const koValue = koInput.value;
-  word = new Word(engValue, koValue);
+  return new Word(engValue, koValue);
 };
 
 const addNewWord = () => {
-  generateWord();
+  word = generateWord();
   console.log(word);
 };
 
