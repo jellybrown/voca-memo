@@ -1,3 +1,4 @@
+import { createTag, addClassName, callNewTag } from "./tagFunction.js";
 import Word from "./word.js";
 
 const plusBtn = document.querySelector(".main_add_btn");
@@ -20,25 +21,10 @@ const closeModal = () => {
 plusBtn.addEventListener("click", openModal);
 closeBtn.addEventListener("click", closeModal);
 
-let word;
-let data;
 const generateWord = () => {
   const engValue = engInput.value;
   const koValue = koInput.value;
   return new Word(engValue, koValue);
-};
-const createTag = (tagName) => {
-  let newTag = document.createElement(tagName);
-  return newTag;
-};
-const addClassName = (tagName, addName) => {
-  tagName.classList.add(addName);
-};
-
-const callNewTag = (tagName, addName) => {
-  let newTag = createTag(tagName);
-  addClassName(newTag, addName);
-  return newTag;
 };
 
 const makeData = (word) => {
@@ -63,8 +49,8 @@ const pushList = (data) => {
 };
 
 const addNewWord = () => {
-  word = generateWord();
-  data = makeData(word);
+  const word = generateWord();
+  const data = makeData(word);
   pushList(data);
 };
 
