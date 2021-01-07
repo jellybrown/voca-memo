@@ -58,13 +58,14 @@ const makeData = (word) => {
   newData.append(icon);
   return newData;
 };
-const pushList = (data) => {};
+const pushList = (data) => {
+  vocaList.append(data);
+};
 
 const addNewWord = () => {
   word = generateWord();
   data = makeData(word);
-  console.log(data);
-  // pushList(data);
+  pushList(data);
 };
 
 modalAddBtn.addEventListener("click", addNewWord);
