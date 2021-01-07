@@ -27,9 +27,24 @@ const generateWord = () => {
   const koValue = koInput.value;
   return new Word(engValue, koValue);
 };
+const createTag = (tagName) => {
+  let newTag = document.createElement(tagName);
+  return newTag;
+};
+const addClassName = (tagName, addName) => {
+  tagName.classList.add(addName);
+};
+
+const callNewTag = (tagName, addName) => {
+  let newTag = createTag(tagName);
+  addClassName(newTag, addName);
+  return newTag;
+};
+
 const makeData = (word) => {
-  let newData = document.createElement("li");
-  newData.classList.add("voca_item");
+  //   let newData = document.createElement("li");
+  //   newData.classList.add("voca_item");
+  let newData = callNewTag("li", "voca_item");
   let span = document.createElement("span");
   span.classList.add("letter");
   span.classList.add("english");
