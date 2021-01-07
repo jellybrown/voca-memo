@@ -48,10 +48,15 @@ const pushList = (data) => {
   vocaList.append(data);
 };
 
+let wordList = [];
+
 const addNewWord = () => {
   const word = generateWord();
+  wordList.push(word);
+  // 인풋 초기화하기
   const data = makeData(word);
   pushList(data);
+  console.log(wordList);
 };
 
 modalAddBtn.addEventListener("click", addNewWord);
