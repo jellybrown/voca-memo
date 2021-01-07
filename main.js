@@ -42,22 +42,21 @@ const callNewTag = (tagName, addName) => {
 };
 
 const makeData = (word) => {
-  //   let newData = document.createElement("li");
-  //   newData.classList.add("voca_item");
   let newData = callNewTag("li", "voca_item");
-  let span = document.createElement("span");
-  span.classList.add("letter");
-  span.classList.add("english");
+  let span = callNewTag("span", "letter");
+  addClassName(span, "english");
   span.innerText = word._eng;
-  let span2 = document.createElement("span");
-  span2.classList.add("letter");
-  span2.classList.add("korean");
+  let span2 = callNewTag("span", "letter");
+  addClassName(span2, "korean");
   span2.innerText = word._ko;
+  let icon = callNewTag("a", "trash_icon");
+  let icon_svg = callNewTag("i", "far");
+  addClassName(icon_svg, "fa-trash-alt");
+  icon.append(icon_svg);
   newData.append(span);
   newData.append(span2);
+  newData.append(icon);
   return newData;
-  // <a class="trash_icon">~ 도 추가하기
-  // 아마 함수로 묶어야할듯
 };
 const pushList = (data) => {};
 
