@@ -50,14 +50,33 @@ const pushList = (data) => {
 
 let wordList = [];
 
+const saveLocalStorage = (items) => {
+  localStorage.setItem("localWords", JSON.stringify(items));
+};
+
+const loadLocalStorage = () => {
+  const savedData = localStorage.getItem("localWords");
+  if (savedData === null) return;
+  const parseData = JSON.parse(savedData);
+  parseData.forEach((item) => {
+    wordList = [...wordList, item];
+    const data = makeData(item);
+
+    pushList(data);
+  });
+};
+
 const addNewWord = () => {
   const word = generateWord();
   wordList.push(word);
+  saveLocalStorage(wordList);
   // 인풋 초기화하기
   const data = makeData(word);
   pushList(data);
-  console.log(wordList);
+
+  //로컬스토리지에 담기
 };
 
+loadLocalStorage();
 modalAddBtn.addEventListener("click", addNewWord);
 //inputs.addEventListener("keypress", inputListener);
