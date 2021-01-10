@@ -82,6 +82,13 @@ const deleteWord = (e) => {
   const list = target.parentNode;
   if (list.nodeName == "LI") {
     vocaList.removeChild(list);
+    const willDeleteWord = list.childNodes[0].innerText;
+
+    const willUpdateList = wordList.filter(
+      (word) => willDeleteWord !== Object.values(word)[0]
+    );
+    wordList = willUpdateList;
+    saveLocalStorage(wordList);
   }
 };
 
