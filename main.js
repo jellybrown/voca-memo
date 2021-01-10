@@ -77,6 +77,15 @@ const addNewWord = () => {
   //로컬스토리지에 담기
 };
 
+const deleteWord = (e) => {
+  const target = e.target.parentNode;
+  const list = target.parentNode;
+  if (list.nodeName == "LI") {
+    vocaList.removeChild(list);
+  }
+};
+
 loadLocalStorage();
 modalAddBtn.addEventListener("click", addNewWord);
 //inputs.addEventListener("keypress", inputListener);
+vocaList.addEventListener("click", deleteWord);
