@@ -10,8 +10,22 @@
     <script defer type="module" src="./main.js" ></script>
 </head>
 <body>
-    
-    <section class="voca_section">
+    <section class="quiz_section">
+        
+        <div class="user_choice_modal">
+            <h2 class="get_info_title">어떤 퀴즈를 불러올까요?</h2>
+            <form>
+                <div class="check_radio">
+                <input type="radio" name="user_answer" id="ko_check" value="korean" checked>
+                <label for="ko_check">한글로 대답할게요</label>
+                <input type="radio" name="user_answer" id="eng_check" value="english">
+                <label for="eng_check">영어로 대답할게요</label>
+                </div>
+                <button class="load_quiz_btn">확인</button>
+            </form>
+        </div>
+    </section>
+    <section class="voca_section hide">
         <div class="voca_title">
             <h1>나만의 영어단어장</h1>
             <button class="quiz_btn">퀴즈 풀기</button>
