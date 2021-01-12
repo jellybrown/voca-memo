@@ -80,7 +80,8 @@ const addNewWord = () => {
   clearInput();
   const data = makeData(word);
   pushList(data);
-  console.log(wordList);
+  console.log(word.eng);
+
   //로컬스토리지에 담기
 };
 
