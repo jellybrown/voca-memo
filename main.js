@@ -59,9 +59,11 @@ const loadLocalStorage = () => {
   if (savedData === null) return;
   const parseData = JSON.parse(savedData);
   parseData.forEach((item) => {
-    wordList = [...wordList, item];
+    const savedEng = Object.values(item)[0];
+    const savedKo = Object.values(item)[1];
+    const savedWord = new Word(savedEng, savedKo);
+    wordList = [...wordList, savedWord];
     const data = makeData(item);
-
     pushList(data);
   });
 };
@@ -73,7 +75,7 @@ const addNewWord = () => {
   // 인풋 초기화하기
   const data = makeData(word);
   pushList(data);
-
+  console.log(wordList);
   //로컬스토리지에 담기
 };
 
