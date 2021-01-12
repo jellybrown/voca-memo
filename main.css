@@ -9,6 +9,7 @@ body {
   position: relative;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 100;
+  background: #343434;
 }
 
 /* header */
@@ -28,7 +29,7 @@ body {
 /* voca (ul,li) */
 .voca_section {
   width: 100%;
-  background: #343434;
+
   padding-top: 4em;
 
   position: absolute;
