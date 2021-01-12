@@ -77,18 +77,22 @@ const addNewWord = () => {
   //로컬스토리지에 담기
 };
 
+const deleteInLocalStorage = (list) => {
+  const willDeleteWord = list.childNodes[0].innerText;
+
+  const willUpdateList = wordList.filter(
+    (word) => willDeleteWord !== Object.values(word)[0]
+  );
+  wordList = willUpdateList;
+  saveLocalStorage(wordList);
+};
+
 const deleteWord = (e) => {
   const target = e.target.parentNode;
   const list = target.parentNode;
   if (list.nodeName == "LI") {
     vocaList.removeChild(list);
-    const willDeleteWord = list.childNodes[0].innerText;
-
-    const willUpdateList = wordList.filter(
-      (word) => willDeleteWord !== Object.values(word)[0]
-    );
-    wordList = willUpdateList;
-    saveLocalStorage(wordList);
+    deleteInLocalStorage(list);
   }
 };
 
