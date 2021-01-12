@@ -19,13 +19,31 @@ body {
   top: 0;
   width: 100%;
   background: #fff;
+  text-align: center;
 }
 .voca_title h1 {
-  text-align: center;
   color: #585858;
   font-weight: 500;
+  display: inline-block;
 }
-
+.quiz_btn {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: #f69a9a;
+  margin-left: 2em;
+  padding: 0.6em 1.2em;
+  border-radius: 15px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.quiz_btn:hover {
+  background: #f77676;
+  transition: 0.3s;
+}
 /* voca (ul,li) */
 .voca_section {
   width: 100%;
