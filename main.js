@@ -68,11 +68,16 @@ const loadLocalStorage = () => {
   });
 };
 
+const clearInput = () => {
+  engInput.value = "";
+  koInput.value = "";
+};
+
 const addNewWord = () => {
   const word = generateWord();
   wordList.push(word);
   saveLocalStorage(wordList);
-  // 인풋 초기화하기
+  clearInput();
   const data = makeData(word);
   pushList(data);
   console.log(wordList);
