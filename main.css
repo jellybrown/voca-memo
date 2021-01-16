@@ -27,24 +27,6 @@ body {
   font-weight: 500;
   display: inline-block;
 }
-.quiz_btn {
-  position: absolute;
-  right: 10%;
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-  background: #f69a9a;
-  margin-left: 2em;
-  padding: 0.6em 1.2em;
-  border-radius: 15px;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.quiz_btn:hover {
-  background: #f77676;
-  transition: 0.3s;
-}
 /* voca (ul,li) */
 .voca_section {
   width: 100%;
@@ -64,7 +46,7 @@ body {
   padding: 5%;
 }
 .voca_item {
-  padding: 2em 1em 1em 1em;
+  padding: 1.2em 0.2em 1.2em 0.5em;
   border-bottom: 1px solid #fff;
   display: flex;
   justify-content: space-between;
@@ -72,11 +54,11 @@ body {
 }
 .english {
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   flex-basis: 50%;
 }
 .korean {
-  font-size: 1.05rem;
+  font-size: 1rem;
   flex: 1;
 }
 .trash_icon {
