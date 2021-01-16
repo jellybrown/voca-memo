@@ -47,6 +47,7 @@ body {
   align-items: center;
 }
 .english {
+  font-weight: 400;
   font-size: 1.6rem;
   flex-basis: 50%;
 }
