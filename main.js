@@ -80,9 +80,6 @@ const addNewWord = () => {
   clearInput();
   const data = makeData(word);
   pushList(data);
-  console.log(word.eng);
-
-  //로컬스토리지에 담기
 };
 
 const deleteInLocalStorage = (list) => {
@@ -106,5 +103,4 @@ const deleteWord = (e) => {
 
 loadLocalStorage();
 modalAddBtn.addEventListener("click", addNewWord);
-//inputs.addEventListener("keypress", inputListener);
 vocaList.addEventListener("click", deleteWord);
