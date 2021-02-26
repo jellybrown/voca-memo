@@ -180,7 +180,7 @@ const deleteInLocalStorage = (list) => {
 
 <br>
 
-<a hreef="https://jellybrown.github.io/voca-memo/">구경하러 가기</a>
+<a href="https://jellybrown.github.io/voca-memo/">구경하러 가기</a>
 
 <br>
 
