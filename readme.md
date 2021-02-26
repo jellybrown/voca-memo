@@ -2,11 +2,12 @@
 
 <br>
 
-## ❗️ 프로젝트 목적
+## ❗️ 프로젝트 소개
 
 <br>
 
-집에서 간단히 이용할 수 있는 영어 단어장을 만들어보고 싶었습니다.
+- 마크업과 JS를 복습하며 만든 프로젝트
+- 간단히 이용할 수 있는 영어 단어장
 
 <br>
 
@@ -18,19 +19,19 @@
 
 <br>
 
-### 2021.01.03 ~ 2021.01.17 (1인)
+- 2021.01.03 ~ 2021.01.17 (1인)
 
 <br>
 
-## ❗️ 사용된 기술 & 라이브러리
+## ❗️ 사용된 기술
 
 <br>
 
-### - html,css
+- html, css
 
-### - javascript
+- Javascript
 
-### - Local storage
+- Local storage
 
 <br>
 
@@ -46,7 +47,7 @@
 
 <br>
 
-- 마크업을 먼저 깔끔히 하고, js를 이용해 단어를 추가하도록 했습니다.
+- 의미있는 마크업을 위해 section, h1, ul등의 태그들을 이용했습니다.
 
 ```html
 <!--  voca section -->
@@ -67,6 +68,7 @@
 
 <section class="modal_section hide">
     ...
+    <!-- 입력하는 영역의 container역할을 하는 content -->
     <div class="content">
                 <div class="modal_eng column">
                     <label for="eng_input">영어</label>
@@ -82,15 +84,44 @@
 <section>
 ```
 
+<br>
+
+- 지루하지 않게, 휴지통 아이콘에 애니메이션을 만들어서 적용했습니다.
+
+```css
+.trash_icon:hover {
+  color: #fff;
+  animation: shake 0.3s infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(45deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(-45deg) scale(1.3);
+  }
+  100% {
+    transform: rotate(45deg) scale(1.1);
+  }
+}
+```
+
+<br>
+
+- 단어를 생성할 수 있도록 함수를 작성했습니다.
+
 ```js
 // javascript
 
+// 단어를 생성하는 함수
 const generateWord = () => {
   const engValue = engInput.value;
   const koValue = koInput.value;
   return new Word(engValue, koValue);
 };
 
+// html & LocalStorage에 단어를 추가하는 함수
 const addNewWord = () => {
   const word = generateWord();
   wordList.push(word);
@@ -107,7 +138,7 @@ const addNewWord = () => {
 
 <br>
 
-- 껏다 켜도 괜찮도록 Local Storage를 이용했습니다.
+- 정보가 사라지지 않게 Local Storage를 이용했습니다.
 
 ```js
 
@@ -145,6 +176,14 @@ const deleteInLocalStorage = (list) => {
 
 <br>
 
+## ❗️ 링크
+
+<br>
+
+<a hreef="https://jellybrown.github.io/voca-memo/">구경하러 가기</a>
+
+<br>
+
 ## ❗️ 프로젝트 결과화면
 
 <br>
@@ -161,18 +200,19 @@ const deleteInLocalStorage = (list) => {
 
 <br>
 
-### Local Storage
+### 1. Local Storage
 
 새로 접속하면 이전 내용을 기억하는 것처럼 화면에 렌더링이 되어 있어야 하는데, <br>
 local storage에 어떻게 저장해야 가능한건지 생각이 나지 않았습니다. <br>
-이전에 local storage에 대해 학습했던 걸 보며 "전체를 가지고와 분해한 다음 렌더링을 한다" 는 것을 복습하고, <br>
-계속 전체를 업데이트 해야함을 알았습니다.
+이전에 local storage에 대해 학습했던 걸 보며,<br>
+전체를 가지고와 분해한 다음 렌더링을 한다는 것을 복습한뒤 적용했습니다. <br>
 
 <br>
 
-### class를 이용하여 해보고 싶었으나 실패
+### 2. class를 이용하여 해보고 싶었으나 실패
 
-class를 이용하여 프로젝트를 만들어보고 싶었으나, 이 프로젝트와 맞지 않는 것 같고, class로 무엇을 만들어야 할지 판단이 서지않았습니다. <br>
-객체지향으로 코드를 작성하는 법에 대해 공부하고 새로운 프로젝트를 해볼 예정입니다.
+class를 이용하여 프로젝트를 만들어보고 싶었으나 이 프로젝트와 맞지 않는 것 같고,<br>
+class로 무엇을 만들어야 할지 판단이 서지않았습니다. <br>
+객체지향에 대해 공부하고 새로운 프로젝트를 해볼 예정입니다.
 
-## <br>
+<br>

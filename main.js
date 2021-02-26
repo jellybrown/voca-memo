@@ -28,22 +28,32 @@ const generateWord = () => {
 };
 
 const makeData = (word) => {
+  // <li class="voca_item"></li>
   let newData = callNewTag("li", "voca_item");
+
+  // <span class="letter english">${영어}</span>
   let span = callNewTag("span", "letter");
   addClassName(span, "english");
   span.innerText = word._eng;
+
+  // <span class="letter korean">${한글}</span>
   let span2 = callNewTag("span", "letter");
   addClassName(span2, "korean");
   span2.innerText = word._ko;
+
+  // <a><i class="far fa-trash-alt">${아이콘}</i></a>
   let icon = callNewTag("a", "trash_icon");
   let icon_svg = callNewTag("i", "far");
   addClassName(icon_svg, "fa-trash-alt");
   icon.append(icon_svg);
+
+  // li태그 안에 삽입
   newData.append(span);
   newData.append(span2);
   newData.append(icon);
   return newData;
 };
+
 const pushList = (data) => {
   vocaList.append(data);
 };
@@ -56,6 +66,7 @@ const saveLocalStorage = (items) => {
 
 const loadLocalStorage = () => {
   const savedData = localStorage.getItem("localWords");
+  // save된 data가 없다면 종료
   if (savedData === null) return;
   const parseData = JSON.parse(savedData);
   parseData.forEach((item) => {
@@ -73,6 +84,7 @@ const clearInput = () => {
   koInput.value = "";
 };
 
+// addNewWord: 새로운 단어 추가(html & LocalStorage)
 const addNewWord = () => {
   const word = generateWord();
   wordList.push(word);
