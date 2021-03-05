@@ -1,14 +1,14 @@
 import { createTag, addClassName, callNewTag } from "./tagFunction.js";
 import Word from "./word.js";
 
-const plusBtn = document.querySelector(".main_add_btn");
-const modalSection = document.querySelector(".modal_section");
+const plusBtn = document.querySelector(".voca__add-button");
+const modalSection = document.querySelector("section.modal");
 const closeBtn = document.querySelector(".close");
-const content = document.querySelector(".content");
-const modalAddBtn = document.querySelector(".modal_add_btn");
-const engInput = document.querySelector("#eng_input");
-const koInput = document.querySelector("#ko_input");
-const vocaList = document.querySelector(".voca_list");
+const content = document.querySelector(".input__wrapper");
+const modalAddBtn = document.querySelector(".modal__add-button");
+const engInput = document.querySelector("#english");
+const koInput = document.querySelector("#korean");
+const vocaList = document.querySelector(".voca__list");
 
 const openModal = () => {
   modalSection.classList.remove("hide");
@@ -29,21 +29,21 @@ const generateWord = () => {
 };
 
 const makeData = (word) => {
-  // <li class="voca_item"></li>
-  let newData = callNewTag("li", "voca_item");
+  // <li class="voca__list-item"></li>
+  let newData = callNewTag("li", "voca__list-item");
 
-  // <span class="letter english">${영어}</span>
+  // <span class="voca__english">${영어}</span>
   let span = callNewTag("span", "letter");
   addClassName(span, "english");
   span.innerText = word._eng;
 
-  // <span class="letter korean">${한글}</span>
+  // <span class="voca__korean">${한글}</span>
   let span2 = callNewTag("span", "letter");
   addClassName(span2, "korean");
   span2.innerText = word._ko;
 
   // <a><i class="far fa-trash-alt">${아이콘}</i></a>
-  let icon = callNewTag("a", "trash_icon");
+  let icon = callNewTag("a", "trash-icon");
   let icon_svg = callNewTag("i", "far");
   addClassName(icon_svg, "fa-trash-alt");
   icon.append(icon_svg);
