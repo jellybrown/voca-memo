@@ -4,7 +4,6 @@ import Word from "./word.js";
 const plusBtn = document.querySelector(".voca__add-button");
 const modalSection = document.querySelector("section.modal");
 const closeBtn = document.querySelector(".close");
-const content = document.querySelector(".input__wrapper");
 const modalAddBtn = document.querySelector(".modal__add-button");
 const engInput = document.querySelector("#english");
 const koInput = document.querySelector("#korean");
@@ -29,34 +28,17 @@ const generateWord = () => {
 };
 
 const makeData = (word) => {
-  // <li class="voca__list-item"></li>
-  let newData = callNewTag("li", "voca__list-item");
-
-  // <span class="voca__english">${영어}</span>
-  let span = callNewTag("span", "letter");
-  addClassName(span, "english");
-  span.innerText = word._eng;
-
-  // <span class="voca__korean">${한글}</span>
-  let span2 = callNewTag("span", "letter");
-  addClassName(span2, "korean");
-  span2.innerText = word._ko;
-
-  // <a><i class="far fa-trash-alt">${아이콘}</i></a>
-  let icon = callNewTag("a", "trash-icon");
-  let icon_svg = callNewTag("i", "far");
-  addClassName(icon_svg, "fa-trash-alt");
-  icon.append(icon_svg);
-
-  // li태그 안에 삽입
-  newData.append(span);
-  newData.append(span2);
-  newData.append(icon);
-  return newData;
+  const li = document.createElement("li");
+  li.setAttribute("class", "voca__list-item");
+  li.innerHTML = `<span class="voca__english">${word._eng}</span>
+  <span class="voca__korean">${word._ko}</span>
+  <a class="trash-icon"><i class="far fa-trash-alt"></i></a>
+  `;
+  return li;
 };
 
 const pushList = (data) => {
-  vocaList.append(data);
+  vocaList.appendChild(data);
 };
 
 let wordList = [];
@@ -106,12 +88,11 @@ const deleteInLocalStorage = (list) => {
 };
 
 const deleteWord = (e) => {
-  const target = e.target.parentNode;
-  const list = target.parentNode;
-  if (list.nodeName == "LI") {
-    vocaList.removeChild(list);
-    deleteInLocalStorage(list);
-  }
+  const trash = e.target;
+  const target = trash.parentNode.parentNode; // li
+  console.log(target);
+  vocaList.removeChild(target);
+  deleteInLocalStorage(target);
 };
 
 loadLocalStorage();
