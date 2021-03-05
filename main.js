@@ -21,6 +21,7 @@ const closeModal = () => {
 plusBtn.addEventListener("click", openModal);
 closeBtn.addEventListener("click", closeModal);
 
+// 새로운 단어를 생성하는 함수
 const generateWord = () => {
   const engValue = engInput.value;
   const koValue = koInput.value;
@@ -84,7 +85,7 @@ const clearInput = () => {
   koInput.value = "";
 };
 
-// addNewWord: 새로운 단어 추가(html & LocalStorage)
+// html & LocalStorage 에 새로운 단어 추가하는 함수
 const addNewWord = () => {
   const word = generateWord();
   wordList.push(word);
