@@ -35,6 +35,19 @@
 
 <br>
 
+<br>
+
+## ❗️ 개선해볼 것
+
+<br>
+
+- [x] html class 이름 깔끔하게 정리
+- [ ] LocalStorage 클래스로 만들어 보기
+- [ ] 각 입력칸 영어/한글인지 확인하기
+- [ ] 단어 1번 추가시 모달창 닫기
+
+<br>
+
 ---
 
 <br>
@@ -52,36 +65,44 @@
 ```html
 <!--  voca section -->
 
-<section class="voca_section">
-  <div class="voca_title">
+<section class="voca">
+  <div class="voca__title">
     <h1>나만의 영어단어장</h1>
   </div>
-  <ul class="voca_list">
-    <!-- 여기에 영어 단어가 들어옵니다 -->
+  <ul class="voca__list">
+    <!-- 여기에 단어가 들어옵니다. -->
   </ul>
-  <button class="main_add_btn"><i class="fas fa-plus"></i></button>
+  <button class="voca__add-button"><i class="fas fa-plus"></i></button>
 </section>
 ```
 
 ```html
 <!--  modal section -->
 
-<section class="modal_section hide">
-    ...
-    <!-- 입력하는 영역의 container역할을 하는 content -->
-    <div class="content">
-                <div class="modal_eng column">
-                    <label for="eng_input">영어</label>
-                    <input type="text" id="eng_input"/>
-                </div>
-                <div class="modal_ko column">
-                    <label for="ko_input">뜻</label>
-                    <input type="text" id="ko_input"/>
-                </div>
-            </div>
-            <button class="modal_add_btn">추가</button>
+<section class="modal hide">
+  <div class="modal__container">
+    <div class="modal__header">
+      <h2>단어추가</h2>
+      <span class="close">
+        <i class="fas fa-times"></i>
+      </span>
     </div>
-<section>
+    <!-- modal__header -->
+    <div class="input__wrapper">
+      <div class="column english__wrapper">
+        <label for="english">영어</label>
+        <input type="text" id="english" />
+      </div>
+      <div class="column korean__wrapper">
+        <label for="korean">뜻</label>
+        <input type="text" id="korean" />
+      </div>
+    </div>
+    <!-- input__wrapper: 단어 작성 영역 -->
+    <button class="modal__add-button">추가</button>
+  </div>
+  <!-- modal__container -->
+</section>
 ```
 
 <br>
