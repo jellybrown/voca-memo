@@ -1,4 +1,4 @@
-import { createTag, addClassName, callNewTag } from "./tagFunction.js";
+import { LocalStorage } from "./localStorage.js";
 import Word from "./word.js";
 
 const plusBtn = document.querySelector(".voca__add-button");
@@ -8,6 +8,8 @@ const modalAddBtn = document.querySelector(".modal__add-button");
 const engInput = document.querySelector("#english");
 const koInput = document.querySelector("#korean");
 const vocaList = document.querySelector(".voca__list");
+
+const storage = new LocalStorage();
 
 const openModal = () => {
   modalSection.classList.remove("hide");
@@ -43,15 +45,8 @@ const pushList = (data) => {
 
 let wordList = [];
 
-const saveLocalStorage = (items) => {
-  localStorage.setItem("localWords", JSON.stringify(items));
-};
-
-const loadLocalStorage = () => {
-  const savedData = localStorage.getItem("localWords");
-  // save된 data가 없다면 종료
-  if (savedData === null) return;
-  const parseData = JSON.parse(savedData);
+const loadFirst = () => {
+  const parseData = storage.load();
   parseData.forEach((item) => {
     const savedEng = Object.values(item)[0];
     const savedKo = Object.values(item)[1];
@@ -71,30 +66,20 @@ const clearInput = () => {
 const addNewWord = () => {
   const word = generateWord();
   wordList.push(word);
-  saveLocalStorage(wordList);
+  storage.save(wordList);
   clearInput();
   const data = makeData(word);
   pushList(data);
 };
 
-const deleteInLocalStorage = (list) => {
-  const willDeleteWord = list.childNodes[0].innerText;
-
-  const willUpdateList = wordList.filter(
-    (word) => willDeleteWord !== Object.values(word)[0]
-  );
-  wordList = willUpdateList;
-  saveLocalStorage(wordList);
-};
-
 const deleteWord = (e) => {
   const trash = e.target;
   const target = trash.parentNode.parentNode; // li
-  console.log(target);
   vocaList.removeChild(target);
-  deleteInLocalStorage(target);
+  storage.delete(wordList, target);
 };
 
-loadLocalStorage();
+loadFirst();
+
 modalAddBtn.addEventListener("click", addNewWord);
 vocaList.addEventListener("click", deleteWord);
