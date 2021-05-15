@@ -70,6 +70,7 @@ const addNewWord = () => {
   clearInput();
   const data = makeData(word);
   pushList(data);
+  closeModal();
 };
 
 const deleteWord = (e) => {
