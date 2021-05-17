@@ -1,0 +1,26 @@
+{
+  "name": "voca-memo",
+  "version": "1.0.0",
+  "description": "<br>",
+  "main": "main.js",
+  "scripts": {
+    "dev": "webpack serve",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jellybrown/voca-memo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jellybrown/voca-memo/issues"
+  },
+  "homepage": "https://github.com/jellybrown/voca-memo#readme",
+  "dependencies": {
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0"
+  }
+}
