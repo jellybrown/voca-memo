@@ -47,7 +47,7 @@ let wordList = [];
 
 const loadFirst = () => {
   const parseData = storage.load();
-  parseData.forEach((item) => {
+  parseData?.forEach((item) => {
     const savedEng = Object.values(item)[0];
     const savedKo = Object.values(item)[1];
     const savedWord = new Word(savedEng, savedKo);

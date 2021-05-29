@@ -7,7 +7,6 @@ export class LocalStorage {
   }
 
   save(items) {
-    console.log(items);
     localStorage.setItem("localWords", JSON.stringify(items));
   }
 
